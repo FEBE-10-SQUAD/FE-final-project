@@ -1,7 +1,7 @@
 import "../assets/css/Login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar";
 // import loginimg from "../../public/login.png";
 
 const Login = () => {
