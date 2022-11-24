@@ -1,8 +1,8 @@
 import "../assets/css/LandingPage.css";
 import "../assets/css/Btn-Up.css";
 
-import Btn_Up from "../components/LandingPage/Btn-Up";
 import Navbar from "../components/NavBar";
+import Btn_Up from "../components/landingPage/Btn-Up";
 
 import Sec1 from "../components/landingPage/Sec1";
 import Sec2 from "../components/landingPage/Sec2";
