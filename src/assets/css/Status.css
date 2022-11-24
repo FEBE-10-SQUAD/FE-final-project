@@ -1,0 +1,19 @@
+#haveApply {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.haveApplyWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  color: white;
+  border: 2px solid blueviolet;
+  border-radius: 50px;
+  padding: 8px 50px;
+}

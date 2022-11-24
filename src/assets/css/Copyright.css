@@ -1,0 +1,89 @@
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1.25);
+    color: red;
+  }
+  20% {
+    transform: scale(1.5);
+    color: red;
+  }
+
+  40% {
+    transform: scale(1);
+    color: red;
+  }
+
+  50% {
+    transform: scale(1.25);
+    color: red;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#copyright {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bxs-heart {
+  font-size: 24px;
+  color: lightgray;
+  transition: all 0.5s ease;
+}
+.bxs-heart:hover {
+  cursor: pointer;
+  /* opacity: 1; */
+  animation: heartbeat 1s infinite;
+}
+
+@media (max-width: 1054px) {
+  .fe-22,
+  .nameTag {
+    display: none;
+  }
+
+  #copyright {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .craft {
+    font-size: 12px;
+  }
+
+  .bxs-heart {
+    font-size: 16px;
+  }
+}
+
+.fe-22 {
+  cursor: pointer;
+  /* border: 1px solid white; */
+  transition: all 0.5s ease-in-out;
+  padding: 8px;
+}
+.fe-22:hover {
+  color: blueviolet;
+  /* border: 1px solid blueviolet; */
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.nameTag {
+  color: rgb(221, 188, 253);
+}
+
+span {
+  font-weight: bolder;
+}

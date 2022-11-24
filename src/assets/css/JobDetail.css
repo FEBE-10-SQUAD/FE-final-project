@@ -1,0 +1,197 @@
+#contParent #img-company {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transform: translate(30px, -50px);
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  /* margin: 20px; */
+  border: 1px solid black;
+}
+
+#img-company {
+  width: 50px;
+  height: 50px;
+}
+
+#left-arrow {
+  position: fixed;
+  font-size: 50px;
+  padding: 10px;
+  left: 2vw;
+  top: 2vw;
+  transition: all 0.2s ease-in-out;
+}
+#left-arrow:hover {
+  border-radius: 50px;
+  background-color: rgb(221, 188, 253);
+  color: white;
+}
+
+#contParent {
+  margin: 100px 100px 100px 100px;
+  background-color: white;
+  border: 1px solid lightslategray;
+  box-shadow: 0px 0px 1px 100px rgb(251, 243, 255);
+  transition: all 0.5s ease-in-out;
+}
+#contParent:hover {
+  transform: translateY();
+}
+
+#contChild {
+  margin: 0px 50px 50px 50px;
+}
+
+#jobAddress {
+  margin-bottom: 40px;
+}
+
+#h-company {
+  display: flex;
+}
+
+#h-posisi {
+  margin-bottom: 8px;
+}
+
+#company {
+  color: blueviolet;
+  margin-right: 12px;
+}
+
+#termAndCond {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid rgb(221, 188, 253);
+  border-radius: 16px;
+  width: fit-content;
+  margin-bottom: 40px;
+}
+
+#r-exp,
+#r-empl,
+#r-offer {
+  padding: 12px;
+}
+
+#r-exp,
+#r-empl {
+  border-right: 2px solid rgb(221, 188, 253);
+}
+
+#h-exp,
+#h-empl,
+#h-offer {
+  margin-bottom: 8px;
+}
+
+.bx-check-circle {
+  color: rgb(220, 192, 234);
+  margin: 0 8px;
+}
+
+#jobDescription {
+  margin-bottom: 18px;
+}
+
+#h-jobDesc {
+  margin-bottom: 12px;
+}
+
+#descList {
+  margin-bottom: 40px;
+}
+
+.li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.li h3 {
+  font-weight: 100;
+}
+
+.p {
+  margin-bottom: 8px;
+}
+
+#btn {
+  background-color: transparent;
+}
+
+#btn-apply {
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  padding: 8px 40px;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.3s ease-in-out;
+}
+
+#btn-apply:hover {
+  background-color: white;
+  border: 1px solid rgb(187, 113, 255);
+  color: rgb(187, 113, 255);
+  cursor: pointer;
+}
+
+#btn-applied {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(87, 209, 87);
+  color: white;
+  font-weight: 700;
+  padding: 8px 32px 8px 40px;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes checkbox {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    /* transform: translatex(-100px); */
+  }
+  100% {
+    opacity: 1;
+    transform: translatex(1px);
+  }
+}
+
+#btn-applied .bxs-check-circle {
+  font-size: 16px;
+  margin: 4px;
+  animation: checkbox 1s ease;
+}
+
+#btn-applied:hover {
+  background-color: white;
+  border: 1px solid rgb(87, 209, 87);
+  color: rgb(87, 209, 87);
+  cursor: pointer;
+}
+
+#btn-loading {
+  background-color: blueviolet;
+  color: white;
+  font-weight: 700;
+  padding: 8px 40px;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 0.2s ease-in-out;
+}
