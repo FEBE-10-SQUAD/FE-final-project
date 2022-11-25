@@ -11,15 +11,12 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  const [successMsg, setSuccessMsg] = useState("");
-
   const handleEmailChange = (e) => {
     setEmailError("");
     setEmail(e.target.value);
 
     if (email !== "") {
-      const emailRegex =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       if (emailRegex.test(email)) {
         setEmailError("");
       } else {
@@ -43,8 +40,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const emailRegex =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     if (email !== "") {
       if (emailRegex.test(email)) {
@@ -73,16 +69,13 @@ const Login = () => {
     const data = { email, password };
 
     try {
-      let result = await fetch(
-        "https://634f64bddf22c2af7b504acd.mockapi.io/jobsidian/users",
-        {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json;charset=UTF-8",
-          },
-        }
-      );
+      let result = await fetch("https://634f64bddf22c2af7b504acd.mockapi.io/jobsidian/users", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+      });
 
       window.location.href = "/";
 
@@ -90,10 +83,7 @@ const Login = () => {
       localStorage.setItem("user-info", JSON.stringify(result));
       // history.push("/JobVacancy");
 
-      console.log(
-        "Congratulations! Your account has been successfully created!",
-        result
-      );
+      console.log("Congratulations! Your account has been successfully created!", result);
     } catch (error) {
       console.log("Failed!");
     }
@@ -122,25 +112,13 @@ const Login = () => {
             <div className="login-input">
               <div className="input-element">
                 <i className="bx bx-envelope"></i>
-                <input
-                  type="text"
-                  placeholder="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                />
+                <input type="text" placeholder="email" value={email} onChange={handleEmailChange} />
                 {emailError && <div className="error-msg">{emailError}</div>}
               </div>
               <div className="input-element">
                 <i className="bx bx-key"></i>
-                <input
-                  type="password"
-                  placeholder="password"
-                  value={password}
-                  onChange={handlePasswordChange}
-                />
-                {passwordError && (
-                  <div className="error-msg">{passwordError}</div>
-                )}
+                <input type="password" placeholder="password" value={password} onChange={handlePasswordChange} />
+                {passwordError && <div className="error-msg">{passwordError}</div>}
               </div>
               <div className="input-element-button">
                 <button type="submit">Login</button>

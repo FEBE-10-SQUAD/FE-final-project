@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./AppLayout";
 import "./assets/css/App.css";
 
@@ -10,6 +10,10 @@ import Status from "./pages/Status";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ListBookmark from "./pages/ListBookmark";
+
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import SavedOffers from "./pages/ProfilePage/SavedOffers";
+import UploadDocuments from "./pages/ProfilePage/UploadDocuments";
 
 import AOS from "aos";
 
@@ -28,6 +32,11 @@ const App = () => {
           <Route path="/JobDetail/:id" element={<JobDetail />} />
           <Route path="/Status" element={<Status />} />
           <Route path="/ListBookmark" element={<ListBookmark />} />
+          <Route path="/ProfilePage">
+            <Route path="/ProfilePage/" element={<ProfilePage />} />
+            <Route path="/ProfilePage/saved-offers" element={<SavedOffers />} />
+            <Route path="/ProfilePage/up-doc" element={localStorage.getItem("user-info") ? <UploadDocuments /> : <Navigate replace to={"/login"} />} />
+          </Route>
         </Route>
       </Routes>
     </>

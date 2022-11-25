@@ -1,0 +1,177 @@
+.ProfilPage {
+  display: flex;
+  margin: 0px 30px 0px 30px;
+  justify-content: space-evenly;
+}
+
+/* wadah utk menu-box */
+.profile-menu {
+  flex: 1;
+}
+
+/* box warna krem di sebelah kiri yg nampilin menu profile, saved offers, up docs, logout */
+.menu-box {
+  background-color: #fff6eb;
+  border-radius: 12px;
+  margin-right: 15px;
+  padding: 20px;
+}
+
+.menu-box ul li {
+  line-height: 40px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.menu-box ul li span {
+  margin-left: 10px;
+}
+
+.menu-box ul li:hover {
+  border-radius: 5px;
+  background-color: #efe7de;
+}
+
+/* hide icon bold yg akan dibuat visible cm kalo link active */
+.fi.fi-sr-user,
+.fi.fi-sr-bookmark,
+.fi.fi-br-upload,
+.fi.fi-br-sign-out-alt {
+  visibility: hidden;
+  position: absolute;
+  margin-left: -15px;
+}
+
+/* style opsi menu kalau ga aktif */
+.link {
+  color: black;
+  font-weight: 300;
+}
+
+/***** style opsi menu kalau lagi aktif *****/
+.link-active {
+  color: black;
+}
+
+.link-active .fi.fi-rr-user,
+.link-active .fi.fi-rr-bookmark,
+.link-active .fi.fi-rr-upload,
+.link-active .fi.fi-rr-sign-out-alt {
+  visibility: hidden;
+}
+
+.link-active .fi.fi-sr-user,
+.link-active .fi.fi-sr-bookmark,
+.link-active .fi.fi-br-upload,
+.link-active .fi.fi-br-sign-out-alt {
+  visibility: visible;
+}
+/***** end of style opsi menu kalau lagi aktif *****/
+
+.profile-container {
+  flex: 3;
+}
+
+/* box warna ungu muda di sebelah kanan */
+.profile-box {
+  background-color: #f5ecff;
+  border-radius: 15px;
+  margin-left: 15px;
+  padding: 20px;
+}
+
+.edit-profile {
+  text-align: end;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.profile-show {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profile-show img {
+  border-radius: 50%;
+  width: 15%;
+  margin: 0px 70px 0px 200px;
+}
+
+.profile-show span {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 200px 30px 200px;
+}
+
+.profile-info-left ul li,
+.profile-info-right ul li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.profile-info-left ul li label,
+.profile-info-right ul li label {
+  font-weight: 700;
+}
+
+.profile-info-left ul li span,
+.profile-info-right ul li span {
+  font-weight: 500;
+}
+
+.detil-info {
+  margin: 0px 70px 0px 70px;
+}
+
+.detil-info span {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.detil-info .about-me {
+  margin: 20px 0px 20px 0px;
+  padding: 20px 30px 20px 30px;
+  border-radius: 10px;
+  background-color: #fff6eb;
+}
+
+.detil-info .about-me h4 {
+  font-weight: 600;
+}
+
+.detil-info .about-me p {
+  text-align: justify;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.detil-info .about-me button {
+  margin-top: 10px;
+  background-color: #fff6eb;
+  display: flex;
+}
+
+.detil-info .about-me button i {
+  color: black;
+  font-size: 16px;
+}
+
+.detil-info .about-me button span {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+  color: black;
+}
+
+.detil-info .about-me button:hover {
+  background-color: #d1c9bf;
+}
