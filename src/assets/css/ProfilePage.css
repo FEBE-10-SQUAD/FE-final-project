@@ -82,8 +82,13 @@
 
 .edit-profile {
   text-align: end;
-  font-size: 12px;
-  font-weight: 400;
+  cursor: pointer;
+}
+
+.edit-profile button {
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #f5ecff;
 }
 
 .profile-show {

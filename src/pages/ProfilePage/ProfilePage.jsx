@@ -1,15 +1,20 @@
 import "../../assets/css/ProfilePage.css";
 import pfp from "../../../public/pfp.jpeg";
+import { useState } from "react";
 
 import React from "react";
 import Navbar from "../../components/Navbar";
+import ModalEditProfile from "../../components/ModalEditProfile";
 
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
 
 const ProfilePage = () => {
   let user = JSON.parse(localStorage.getItem("user-info"));
+
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <>
+    <div>
+      {openModal && <ModalEditProfile closeModal={setOpenModal} />}
       <Navbar />
       <div className="ProfilPage">
         <div className="profile-menu">
@@ -18,7 +23,14 @@ const ProfilePage = () => {
         <div className="profile-container">
           <div className="profile-box">
             <div className="edit-profile">
-              <button>Edit Profile</button>
+              <button
+                className="editUserData"
+                onClick={() => {
+                  setOpenModal(true);
+                }}
+              >
+                Edit Profile
+              </button>
             </div>
             <div className="profile-show">
               <img src={pfp} alt="" />
@@ -63,7 +75,7 @@ const ProfilePage = () => {
               <div className="about-me">
                 <h4>About Me</h4>
                 <button>
-                  <i class="fi fi-rr-add"></i>
+                  <i className="fi fi-rr-add"></i>
                   <span>Add Description</span>
                 </button>
                 {/* <p>
@@ -75,7 +87,7 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
