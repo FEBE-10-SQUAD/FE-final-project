@@ -5,6 +5,7 @@ import { useState } from "react";
 import React from "react";
 import Navbar from "../../components/Navbar";
 import ModalEditProfile from "../../components/ModalEditProfile";
+import ModalAboutMe from "../../components/ModalAboutMe";
 
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
 
@@ -12,9 +13,11 @@ const ProfilePage = () => {
   let user = JSON.parse(localStorage.getItem("user-info"));
 
   const [openModal, setOpenModal] = useState(false);
+  const [modalAboutMe, setModalAboutMe] = useState(false);
   return (
     <div>
       {openModal && <ModalEditProfile closeModal={setOpenModal} />}
+      {modalAboutMe && <ModalAboutMe closedModal={setModalAboutMe} />}
       <Navbar />
       <div className="ProfilPage">
         <div className="profile-menu">
@@ -74,7 +77,11 @@ const ProfilePage = () => {
               <span>Detil Info</span>
               <div className="about-me">
                 <h4>About Me</h4>
-                <button>
+                <button
+                  onClick={() => {
+                    setModalAboutMe(true);
+                  }}
+                >
                   <i className="fi fi-rr-add"></i>
                   <span>Add Description</span>
                 </button>

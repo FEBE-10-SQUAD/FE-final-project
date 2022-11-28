@@ -162,6 +162,7 @@
   margin-top: 10px;
   background-color: #fff6eb;
   display: flex;
+  cursor: pointer;
 }
 
 .detil-info .about-me button i {
@@ -177,6 +178,6 @@
   color: black;
 }
 
-.detil-info .about-me button:hover {
+/* .detil-info .about-me button:hover {
   background-color: #d1c9bf;
-}
+} */

@@ -19,6 +19,23 @@
   padding: 20px;
 }
 
+.modalContainer2 {
+  width: 500px;
+  height: 350px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  position: relative;
+  padding: 20px;
+}
+
+.modalBody .about-me-desc p {
+  text-align: justify;
+}
+
+.modalBody .about-me-desc input {
+  height: 150px;
+}
+
 .modalTitle {
   display: flex;
   justify-content: space-between;
