@@ -14,7 +14,8 @@ const ModalAboutMe = ({ closedModal }) => {
         <div className="modalBody">
           <div className="about-me-desc">
             <p>Tell about yourself so employers understand you more easily.</p>
-            <input type="text" />
+            {/* <input type="text" /> */}
+            <textarea name="about-me" id="about-me" maxlength="150"></textarea>
           </div>
         </div>
         <div className="modalFooter">
