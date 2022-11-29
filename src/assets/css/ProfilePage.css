@@ -181,3 +181,23 @@
 /* .detil-info .about-me button:hover {
   background-color: #d1c9bf;
 } */
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .ProfilPage {
+    flex-direction: column;
+  }
+
+  .menu-box {
+    margin: 5px;
+  }
+
+  .profile-show {
+    flex-direction: column;
+  }
+
+  .profile-show img {
+    width: 50%;
+    margin: 0px;
+  }
+}
