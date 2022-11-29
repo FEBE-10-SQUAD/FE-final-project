@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/css/Modal.css";
-import pfp from "../../public/pfp.jpeg";
+import "../../assets/css/Modal.css";
+import pfp from "../../../public/pfp.jpeg";
 
 const ModalEditProfile = ({ closeModal }) => {
   return (

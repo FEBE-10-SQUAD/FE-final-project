@@ -141,14 +141,14 @@
   font-size: 20px;
 }
 
-.detil-info .about-me {
+.about-me {
   margin: 20px 0px 20px 0px;
   padding: 20px 30px 20px 30px;
   border-radius: 10px;
   background-color: #fff6eb;
 }
 
-.detil-info .about-me h4 {
+.about-me h4 {
   font-weight: 600;
 }
 
@@ -158,19 +158,19 @@
   margin-top: 5px;
 }
 
-.detil-info .about-me button {
+.about-me button {
   margin-top: 10px;
   background-color: #fff6eb;
   display: flex;
   cursor: pointer;
 }
 
-.detil-info .about-me button i {
+.about-me button i {
   color: black;
   font-size: 16px;
 }
 
-.detil-info .about-me button span {
+.about-me button span {
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;

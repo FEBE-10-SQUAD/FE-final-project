@@ -1,23 +1,25 @@
+import { React, useState } from "react";
 import "../../assets/css/ProfilePage.css";
+
 import pfp from "../../../public/pfp.jpeg";
-import { useState } from "react";
 
-import React from "react";
 import Navbar from "../../components/Navbar";
-import ModalEditProfile from "../../components/ModalEditProfile";
-import ModalAboutMe from "../../components/ModalAboutMe";
-
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
+
+import ModalEditProfile from "../../components/modal/ModalEditProfile";
+import ModalAboutMe from "../../components/modal/ModalAboutMe";
 
 const ProfilePage = () => {
   let user = JSON.parse(localStorage.getItem("user-info"));
 
   const [openModal, setOpenModal] = useState(false);
   const [modalAboutMe, setModalAboutMe] = useState(false);
+
   return (
     <div>
       {openModal && <ModalEditProfile closeModal={setOpenModal} />}
-      {modalAboutMe && <ModalAboutMe closedModal={setModalAboutMe} />}
+      {modalAboutMe && <ModalAboutMe closeModal={setModalAboutMe} />}
+
       <Navbar />
       <div className="ProfilPage">
         <div className="profile-menu">

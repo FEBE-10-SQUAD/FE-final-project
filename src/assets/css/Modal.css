@@ -10,22 +10,26 @@
   overflow-y: scroll;
 }
 
-.modalContainer {
+.modalContainer,
+.modalContainer2,
+.modalContainer3 {
   width: 500px;
-  height: 600px;
   background-color: whitesmoke;
   border-radius: 15px;
   position: relative;
   padding: 20px;
 }
 
+.modalContainer {
+  height: 600px;
+}
+
 .modalContainer2 {
-  width: 500px;
   height: 350px;
-  background-color: whitesmoke;
-  border-radius: 15px;
-  position: relative;
-  padding: 20px;
+}
+
+.modalContainer3 {
+  height: 200px;
 }
 
 .modalBody .about-me-desc p {
@@ -78,6 +82,12 @@
   left: 46%;
   bottom: 63%;
   width: 100px;
+}
+
+#file2 {
+  position: absolute;
+  width: 100px;
+  border: none;
 }
 
 #uploadBtn {
