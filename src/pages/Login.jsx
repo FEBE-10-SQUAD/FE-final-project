@@ -1,14 +1,20 @@
 import "../assets/css/Login.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/NavBar";
 
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "../redux/features/userSlice";
+
 const Login = () => {
+  const user = useSelector(selectUser);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
     setEmailError("");
@@ -37,6 +43,14 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {
+    console.log(user);
+    if (user !== null) {
+      localStorage.setItem("user-info", JSON.stringify(user));
+      window.location.href = "/";
+    }
+  }, [user]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -58,35 +72,19 @@ const Login = () => {
     }
 
     if (email !== "" && emailRegex.test(email) && password !== "") {
-      login();
+      dispatch(
+        login({
+          email: email,
+          password: password,
+          loggedIn: true,
+        })
+      );
+
+      console.log(user);
       setEmail("");
       setPassword("");
     }
   };
-
-  async function login() {
-    const data = { email, password };
-
-    try {
-      let result = await fetch("https://634f64bddf22c2af7b504acd.mockapi.io/jobsidian/users", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-      });
-
-      window.location.href = "/";
-
-      result = await result.json();
-      localStorage.setItem("user-info", JSON.stringify(result));
-      // history.push("/JobVacancy");
-
-      console.log("Congratulations! Your account has been successfully created!", result);
-    } catch (error) {
-      console.log("Failed!");
-    }
-  }
 
   return (
     <>
