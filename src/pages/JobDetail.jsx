@@ -1,10 +1,10 @@
 import "../assets/css/JobDetail.css";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../context";
 import axios from "axios";
-import { APPLIED_JOB_EP } from "../App";
+import { APPLIED_JOB_EP, JOB_EP } from "../App";
 
 const JobDetail = () => {
   const { jobId } = useParams();
@@ -13,6 +13,28 @@ const JobDetail = () => {
 
   const [isApplyLoading, setIsApplyLoading] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
+
+  const [Job, setJob] = useState([]);
+
+  console.log(Job);
+
+  async function getAppliedJobsData() {
+    try {
+      let res = await axios.get(JOB_EP);
+      console.log(res.data);
+      setJob(res);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  // console.log(context.jobs);
+
+  useEffect(() => {
+    getAppliedJobsData;
+  }, []);
+
+  // console.log(Job);
 
   // --------------------------------------------------------------------------------------
 
@@ -66,11 +88,7 @@ const JobDetail = () => {
           .map((data) => {
             return (
               <div key={data.jobId}>
-                <i
-                  onClick={handleBack}
-                  id="left-arrow"
-                  className="bx bx-left-arrow-alt"
-                ></i>
+                <i onClick={handleBack} id="left-arrow" className="bx bx-left-arrow-alt"></i>
                 <div id="contParent">
                   <div id="contChild">
                     <div id="img-company">
@@ -117,9 +135,7 @@ const JobDetail = () => {
                         </div>
                         <div className="li">
                           <i className="bx bx-check-circle"></i>
-                          <h3>
-                            Partner who have good prospect for the future.
-                          </h3>
+                          <h3>Partner who have good prospect for the future.</h3>
                         </div>
                         <div className="li">
                           <i className="bx bx-check-circle"></i>
@@ -129,27 +145,13 @@ const JobDetail = () => {
 
                       <div id="p-desc">
                         <p className="p" align="justify">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Ut repudiandae veniam odio beatae iure porro
-                          nesciunt ex odit sunt vitae. Lorem ipsum dolor sit
-                          amet consectetur adipisicing elit. Cum distinctio vero
-                          libero porro nihil ipsa animi sunt vel minus laborum
-                          temporibus delectus similique tempore repellat.
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repudiandae veniam odio beatae iure porro nesciunt ex odit sunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum distinctio vero libero
+                          porro nihil ipsa animi sunt vel minus laborum temporibus delectus similique tempore repellat.
                         </p>
                         <p className="p" align="justify">
-                          Molestiae id amet adipisci culpa voluptatum! Eos error
-                          hic repudiandae. Lorem ipsum, dolor sit amet
-                          consectetur adipisicing elit. Minima sint, aspernatur,
-                          saepe ut quasi asperiores esse unde veniam iste
-                          doloribus praesentium animi autem deserunt tempora
-                          impedit. Ratione quasi error nulla? Lorem ipsum dolor
-                          sit amet consectetur adipisicing elit. Ut repudiandae
-                          veniam odio beatae iure porro nesciunt ex odit sunt
-                          vitae. Lorem ipsum dolor sit amet consectetur
-                          adipisicing elit. Cum distinctio vero libero porro
-                          nihil ipsa animi sunt vel minus laborum temporibus
-                          delectus similique tempore repellat, officiis harum
-                          illo soluta enim.
+                          Molestiae id amet adipisci culpa voluptatum! Eos error hic repudiandae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sint, aspernatur, saepe ut quasi asperiores esse unde veniam iste doloribus
+                          praesentium animi autem deserunt tempora impedit. Ratione quasi error nulla? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut repudiandae veniam odio beatae iure porro nesciunt ex odit sunt vitae. Lorem
+                          ipsum dolor sit amet consectetur adipisicing elit. Cum distinctio vero libero porro nihil ipsa animi sunt vel minus laborum temporibus delectus similique tempore repellat, officiis harum illo soluta enim.
                         </p>
                       </div>
                     </div>
