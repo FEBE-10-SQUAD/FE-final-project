@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import NavBar from "../../components/NavBar";
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
 
 const SavedOffers = () => {
   return (
     <>
-      <Navbar />
+      <NavBar />
       <div className="ProfilPage">
         <div className="profile-menu">
           <ProfileMenu />

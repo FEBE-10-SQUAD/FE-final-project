@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import Navbar from "../../components/Navbar";
+import NavBar from "../../components/NavBar";
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
 
 import ModalCV from "../../components/modal/ModalCV";
@@ -17,7 +17,7 @@ const UploadDocuments = () => {
       {modalCertification && <ModalCertification closeModal={setModalCertification} />}
       {modalOtherDocs && <ModalOtherDocs closeModal={setModalOtherDocs} />}
 
-      <Navbar />
+      <NavBar />
       <div className="ProfilPage">
         <div className="profile-menu">
           <ProfileMenu />
