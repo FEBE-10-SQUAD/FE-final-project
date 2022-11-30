@@ -36,9 +36,9 @@ const Navbar = () => {
                 <i> Users</i>
               </h4>
               <div id="iconProfile">
-                <a href="">
+                <Link to="/ProfilePage/">
                   <i className="bx bxs-user-circle"></i>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="logout-btn">
