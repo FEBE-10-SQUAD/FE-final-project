@@ -19,8 +19,8 @@ const JobVacancy = () => {
     console.log("cancel cuy");
   };
 
-  const handleDetail = (id) => {
-    navigation(`/JobDetail/${id}`);
+  const handleDetail = (Id) => {
+    navigation(`/JobDetail/${Id}`);
   };
 
   // ----------------------------------------------------------
@@ -54,7 +54,7 @@ const JobVacancy = () => {
 
           <div id="categories">
             {context.jobs.slice(0, 6).map((item) => (
-              <div key={item.id} className="card">
+              <div key={item.jobId} className="card">
                 <div id="card-cate" onClick={() => console.log("category 2")}>
                   <div id="name-cate">
                     <h4>{item.category}</h4>
@@ -86,7 +86,7 @@ const JobVacancy = () => {
                     : item.name.toLowerCase().includes(search);
                 })
                 .map((item) => (
-                  <div key={item.id} data-aos="fade-up">
+                  <div key={item.jobId} data-aos="fade-up">
                     <div className="job">
                       <div id="kiri">
                         <div id="icon-job">
@@ -111,7 +111,7 @@ const JobVacancy = () => {
                       <div id="kanan">
                         <div id="parent-btn-detail" href="#">
                           <button
-                            onClick={() => handleDetail(item.id)}
+                            onClick={() => handleDetail(item.jobId)}
                             id="btn-detail"
                             name="detail"
                             value="detail"

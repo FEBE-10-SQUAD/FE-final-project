@@ -3,34 +3,53 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AppContext } from "../context";
+import axios from "axios";
+import { APPLIED_JOB_EP } from "../App";
 
 const JobDetail = () => {
-  const { id } = useParams();
+  const { jobId } = useParams();
   const context = useContext(AppContext);
-
-  console.log(context);
-
   const navigation = useNavigate();
 
   const [isApplyLoading, setIsApplyLoading] = useState(false);
-  const [isApply, setIsApply] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+
+  // --------------------------------------------------------------------------------------
 
   const handleBack = () => {
     navigation(`/JobVacancy`);
   };
 
-  const handleApply = () => {
-    setIsApply(!isApply);
+  // --------------------------------------------------------------------------------------
+  const handlePostApply = async () => {
+    const payload_appliedJob = {
+      companyId: context.jobs.companyId,
+      jobId: context.jobs.jobId,
+      isAccepted,
+    };
+
     setIsApplyLoading(!isApplyLoading);
-    setTimeout(() => {
-      setIsApplyLoading(false);
-    }, 1500);
-    console.log("success apply");
+    console.log("loading post data. . . ");
+    const requestPost = await axios.post(APPLIED_JOB_EP, payload_appliedJob);
+
+    const responsePost = [requestPost.data];
+
+    if (requestPost.status) {
+      setIsAccepted(!isAccepted);
+      setTimeout(() => {
+        setIsApplyLoading(false);
+      }, 1500);
+      console.log("success apply", responsePost);
+    }
+
+    // navigation(`/Status`);
   };
 
   const handleCancelApplied = () => {
     alert("are you sure want to cancel this job?");
   };
+
+  // --------------------------------------------------------------------------------------
 
   return (
     <>
@@ -43,10 +62,10 @@ const JobDetail = () => {
         </div>
       ) : context.loading ? (
         context.jobs
-          .filter((data) => data.id === id)
+          .filter((data) => data.jobId === jobId)
           .map((data) => {
             return (
-              <div key={data.id}>
+              <div key={data.jobId}>
                 <i
                   onClick={handleBack}
                   id="left-arrow"
@@ -137,15 +156,17 @@ const JobDetail = () => {
 
                     {/* -----------------------APPLY JOB SESSION -------------------------- */}
 
-                    <button id="btn" onClick={handleApply}>
+                    <button id="btn">
                       {isApplyLoading ? (
                         <span id="btn-loading">wait a second...</span>
-                      ) : isApply ? (
+                      ) : isAccepted ? (
                         <span onClick={handleCancelApplied} id="btn-applied">
                           Applied <i className="bx bxs-check-circle"></i>
                         </span>
                       ) : (
-                        <span id="btn-apply">Apply</span>
+                        <span onClick={handlePostApply} id="btn-apply">
+                          Apply
+                        </span>
                       )}
                     </button>
                   </div>
