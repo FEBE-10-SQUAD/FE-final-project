@@ -94,12 +94,19 @@
     display: none;
   }
 
-  .signup-form {
-    margin: 30px 100px;
+  .signup-section {
+    justify-content: center;
   }
 
+  .signup-form {
+    margin: 30px 0px 0px 0px;
+  }
+
+  .signup-title {
+    margin-bottom: 30px;
+  }
   .signup-title h2 {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .bx.bx-envelope,
