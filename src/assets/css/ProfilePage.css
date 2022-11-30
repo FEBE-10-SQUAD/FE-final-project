@@ -189,7 +189,11 @@
   }
 
   .menu-box {
-    margin: 5px;
+    margin: 0px;
+  }
+
+  .profile-box {
+    margin: 0px;
   }
 
   .profile-show {
@@ -198,6 +202,6 @@
 
   .profile-show img {
     width: 50%;
-    margin: 0px;
+    margin-left: 30%;
   }
 }
