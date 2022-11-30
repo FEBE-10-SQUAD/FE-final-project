@@ -188,9 +188,12 @@
     flex-direction: column;
   }
 
-  .menu-box,
-  .profile-box {
+  .menu-box {
     margin: 0px;
+  }
+
+  .profile-box {
+    margin: 25px 0px 0px 0px;
   }
 
   .profile-show {

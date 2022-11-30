@@ -67,7 +67,6 @@
   margin-left: 160px;
   border-radius: 50%;
   position: absolute;
-  background-color: #983bff;
   overflow: hidden;
 }
 
@@ -162,4 +161,23 @@
 
 .cancelButton:hover {
   background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    margin-left: 27%;
+  }
+
+  .all-input {
+    width: 325px;
+    height: 250px;
+  }
+
+  .profile-name input {
+    width: 160px;
+  }
+
+  .modalFooter {
+    width: 325px;
+  }
 }
