@@ -3,7 +3,7 @@ import "../../assets/css/ProfilePage.css";
 
 import pfp from "../../../public/pfp.jpeg";
 
-import Navbar from "../../components/Navbar";
+import NavBar from "../../components/NavBar";
 import ProfileMenu from "../../components/ProfilePage/ProfileMenu";
 
 import ModalEditProfile from "../../components/modal/ModalEditProfile";
@@ -20,7 +20,7 @@ const ProfilePage = () => {
       {openModal && <ModalEditProfile closeModal={setOpenModal} />}
       {modalAboutMe && <ModalAboutMe closeModal={setModalAboutMe} />}
 
-      <Navbar />
+      <NavBar />
       <div className="ProfilPage">
         <div className="profile-menu">
           <ProfileMenu />
