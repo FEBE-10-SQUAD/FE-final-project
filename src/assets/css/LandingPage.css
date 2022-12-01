@@ -1,4 +1,4 @@
-.LandingPage {
+.LP_wrap {
   overflow-x: hidden;
 }
 
@@ -262,7 +262,6 @@ html {
   position: relative;
   margin-bottom: 20px;
   margin-top: 150px;
-  /* background-color: #5d269c; */
 }
 
 .saysJob-text {
@@ -270,26 +269,13 @@ html {
 }
 
 .saysJob-text h3 {
-  /* width: 514px; */
-
   text-align: center;
-  /* padding-left: 500px; */
-  /* height: 61px;
-      left: 730px;
-      top: 1465px; */
   font-weight: 700;
-
   font-size: 36px;
   color: #000000;
 }
 
 .saysJob-text p {
-  /* width: 450px;
-    height: 50px;
-    left: 730px;
-    top: 726px; */
-
-  /* padding-left: 520px; */
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 35px;
@@ -308,7 +294,6 @@ html {
 .main-card {
   width: 100%;
   display: flex;
-  /* width: 200%; */
   transition: 1s;
   justify-content: center;
 }
