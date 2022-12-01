@@ -5,10 +5,8 @@ import Seacrh from "../components/Status/Search";
 import Filter from "../components/Status/Filter";
 import "../assets/css/Status.css";
 import Cards from "../components/Status/Cards";
-import StatusAdmission from "./StatusAdmission";
 
-
-const Status = () => {
+const StatusAdmission = () => {
   return (
     <div>
       <Navbar />
@@ -20,10 +18,11 @@ const Status = () => {
                   <Link to="/status">Registration </Link>
                   </div>
                   <div className="adm">
-                  <Link to="/StatusAdmission"> Admission</Link>
+                  <Link to="/statusadmission"> Admission</Link>
                   </div>
               </div>
               <div className='dua'>
+                j
                 <Seacrh/>
                 <Filter/>
               </div>
@@ -42,4 +41,4 @@ const Status = () => {
   );
 };
 
-export default Status;
+export default StatusAdmission;
