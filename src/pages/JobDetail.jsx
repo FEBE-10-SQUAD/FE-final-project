@@ -5,20 +5,16 @@ import axios from "axios";
 
 const JobDetail = () => {
   const navigation = useNavigate();
+  const params = useLocation();
 
   const [isApplyLoading, setIsApplyLoading] = useState(false);
   const [isAccepted, setIsAccepted] = useState(false);
-
   const [errors, setErrors] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const params = useLocation();
+  const [jobsData, setJobsData] = useState([]);
+  const [userLogin, setUserLogin] = useState({});
 
   const id = params.pathname.split("/")[2];
-
-  const [jobsData, setJobsData] = useState([]);
-
-  const [userLogin, setUserLogin] = useState({});
 
   useEffect(() => {
     const getJobsData = async (e) => {

@@ -1,7 +1,5 @@
 
 import AOS from "aos";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import "./assets/css/App.css";
@@ -19,34 +17,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SavedOffers from "./pages/ProfilePage/SavedOffers";
 import UploadDocuments from "./pages/ProfilePage/UploadDocuments";
 
-
 const App = () => {
   AOS.init();
-
-  const [jobs, setJobs] = useState([]);
-  const [errors, setErrors] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [appliedJobs, setAppliedJobs] = useState([]);
-
-  // ----------------------------------------------------------
-
-  async function GetDataJobs() {
-    try {
-      let resp = await axios.get(JOB_EP);
-      setJobs(resp.data);
-      // console.log(resp.data);
-      setLoading(!loading);
-    } catch (e) {
-      // errors(true);
-      setErrors(e.message);
-    }
-  }
-
-  useEffect(() => {
-    GetDataJobs();
-  }, []);
-
-  // ----------------------------------------------------------
 
   return (
     <div className="App">
@@ -63,7 +35,16 @@ const App = () => {
           <Route path="/ProfilePage">
             <Route path="/ProfilePage/" element={<ProfilePage />} />
             <Route path="/ProfilePage/saved-offers" element={<SavedOffers />} />
-            <Route path="/ProfilePage/up-doc" element={localStorage.getItem("user-info") ? <UploadDocuments /> : <Navigate replace to={"/login"} />} />
+            <Route
+              path="/ProfilePage/up-doc"
+              element={
+                localStorage.getItem("user-info") ? (
+                  <UploadDocuments />
+                ) : (
+                  <Navigate replace to={"/login"} />
+                )
+              }
+            />
           </Route>
         </Route>
       </Routes>
