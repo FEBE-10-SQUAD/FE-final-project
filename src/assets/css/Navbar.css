@@ -138,3 +138,10 @@ nav {
   background-color: white;
   cursor: pointer;
 }
+
+/* .right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+} */

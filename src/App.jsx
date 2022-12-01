@@ -1,27 +1,55 @@
+
+import AOS from "aos";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-import AppLayout from "./AppLayout";
+
 import "./assets/css/App.css";
 
+import AppLayout from "./AppLayout";
 import LandingPage from "./pages/LandingPage";
 import JobVacancy from "./pages/JobVacancy";
 import JobDetail from "./pages/JobDetail";
 import Status from "./pages/Status";
-
+import ListBookmark from "./pages/ListBookmark";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import ListBookmark from "./pages/ListBookmark";
-
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+
 import SavedOffers from "./pages/ProfilePage/SavedOffers";
 import UploadDocuments from "./pages/ProfilePage/UploadDocuments";
 
-import AOS from "aos";
 
 const App = () => {
   AOS.init();
 
+  const [jobs, setJobs] = useState([]);
+  const [errors, setErrors] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [appliedJobs, setAppliedJobs] = useState([]);
+
+  // ----------------------------------------------------------
+
+  async function GetDataJobs() {
+    try {
+      let resp = await axios.get(JOB_EP);
+      setJobs(resp.data);
+      // console.log(resp.data);
+      setLoading(!loading);
+    } catch (e) {
+      // errors(true);
+      setErrors(e.message);
+    }
+  }
+
+  useEffect(() => {
+    GetDataJobs();
+  }, []);
+
+  // ----------------------------------------------------------
+
   return (
-    <>
+    <div className="App">
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
@@ -29,7 +57,7 @@ const App = () => {
         <Route element={<AppLayout />}>
           <Route path="/" element={<LandingPage />} />
           <Route path="/JobVacancy" element={<JobVacancy />} />
-          <Route path="/JobDetail/:id" element={<JobDetail />} />
+          <Route path="/JobDetail/:jobId" element={<JobDetail />} />
           <Route path="/Status" element={<Status />} />
           <Route path="/ListBookmark" element={<ListBookmark />} />
           <Route path="/ProfilePage">
@@ -39,7 +67,7 @@ const App = () => {
           </Route>
         </Route>
       </Routes>
-    </>
+    </div>
   );
 };
 
