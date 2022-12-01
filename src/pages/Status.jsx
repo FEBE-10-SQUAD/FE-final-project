@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../components/NavBar";
-import { Link } from "react-router-dom";
 import Seacrh from "../components/Status/Search";
 import Filter from "../components/Status/Filter";
 import "../assets/css/Status.css";
@@ -16,20 +15,13 @@ const Status = () => {
         <div className='row'>
           <div className="col-7">
               <div className='satu'>
-                  <div className="regis">
-                  <Link to="/status">Registration </Link>
-                  </div>
-                  <div className="adm">
-                  <Link to="/StatusAdmission"> Admission</Link>
-                  </div>
+                  <h4>Applied obs list </h4>
               </div>
               <div className='dua'>
                 <Seacrh/>
-                <Filter/>
               </div>
               <div className="cards">
                 <Cards/>
-             
               </div>
           </div>
         <div className="col-5">

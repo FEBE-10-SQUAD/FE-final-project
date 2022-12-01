@@ -7,7 +7,7 @@ const Filter = () => {
   return (
     <div className='filter'>
         <BiFilterAlt/>
-        <Link to="/">Filter</Link>
+        <Link to="/"><h4>Filter</h4></Link>
     </div>
   )
 }
