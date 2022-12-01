@@ -1,0 +1,183 @@
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(114, 113, 113, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+  overflow-y: scroll;
+}
+
+.modalContainer,
+.modalContainer2,
+.modalContainer3 {
+  width: 500px;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  position: relative;
+  padding: 20px;
+}
+
+.modalContainer {
+  height: 600px;
+}
+
+.modalContainer2 {
+  height: 350px;
+}
+
+.modalContainer3 {
+  height: 200px;
+}
+
+.modalBody .about-me-desc p {
+  text-align: justify;
+}
+
+.modalBody .about-me-desc textarea {
+  margin-top: 7px;
+  padding: 5px;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #983bff;
+  border-radius: 5px;
+  resize: none;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalTitle button {
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.modalBody,
+.modalFooter {
+  margin: 20px 15px 10px 15px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  margin-left: 160px;
+  border-radius: 50%;
+  position: absolute;
+  overflow: hidden;
+}
+
+#photo {
+  width: 100%;
+  height: 100%;
+}
+
+#file {
+  display: none;
+  position: absolute;
+  left: 46%;
+  bottom: 63%;
+  width: 100px;
+}
+
+#file2 {
+  position: absolute;
+  width: 100px;
+  border: none;
+}
+
+#uploadBtn {
+  height: 40px;
+  width: 150px;
+  position: absolute;
+  left: -13%;
+  bottom: -10%;
+  font-size: 10px;
+  text-align: center;
+  background: rgba(84, 84, 84, 0.7);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.all-input {
+  margin-top: 130px;
+  width: 430px;
+  height: 250px;
+  position: absolute;
+}
+
+.modalBody input,
+.modalBody select {
+  border: 1px solid #983bff;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0px 7px 0px 7px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.profile-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-name input {
+  width: 210px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  width: 430px;
+  bottom: 2%;
+  position: absolute;
+}
+
+.saveButton {
+  background-color: #983bff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.cancelButton {
+  background-color: white;
+  border: 1px solid #983bff;
+  color: #983bff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.saveButton:hover {
+  background-color: #5d269c;
+}
+
+.cancelButton:hover {
+  background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-pic {
+    margin-left: 27%;
+  }
+
+  .all-input {
+    width: 325px;
+    height: 250px;
+  }
+
+  .profile-name input {
+    width: 160px;
+  }
+
+  .modalFooter {
+    width: 325px;
+  }
+}

@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/NavBar";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+import "../assets/css/Status.css";
+
+import StatusAdmission from "./StatusAdmission";
+import Navbar from "../components/NavBar";
+import Seacrh from "../components/Status/Search";
+import Filter from "../components/Status/Filter";
+import Cards from "../components/Status/Cards";
 
 const Status = () => {
   // const context = useContext(AppContext);
@@ -68,19 +76,38 @@ const Status = () => {
   return (
     <div>
       <Navbar />
-      <h1>Status</h1>
-      <ul>
-        {jobsData &&
-          jobsData.map((item) => {
-            return (
-              <li key={item._id}>
-                <h2>{item.companyId && item.companyId.username}</h2>
-                <h4>{item.jobId && item.jobId.name}</h4>
-                <h4>{item.isAccepted ? "Diterima" : "Terkirm"}</h4>
-              </li>
-            );
-          })}
-      </ul>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-7">
+            <div className="satu">
+              <div className="regis">
+                <Link to="/status">Registration </Link>
+              </div>
+              <div className="adm">
+                <Link to="/StatusAdmission"> Admission</Link>
+              </div>
+            </div>
+            <div className="dua">
+              <Seacrh />
+              <Filter />
+            </div>
+            <div className="cards">
+              {jobsData &&
+                jobsData.map((item) => {
+                  return (
+                    <li key={item._id}>
+                      <h2>{item.companyId && item.companyId.username}</h2>
+                      <h4>{item.jobId && item.jobId.name}</h4>
+                      <h4>{item.isAccepted ? "Diterima" : "Terkirm"}</h4>
+                    </li>
+                  );
+                })}
+            </div>
+          </div>
+          <div className="col-5"></div>
+        </div>
+      </div>
     </div>
   );
 };

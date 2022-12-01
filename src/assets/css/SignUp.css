@@ -63,8 +63,9 @@
 }
 
 .bx.bx-envelope,
-.bx.bxs-phone,
-.bx.bx-key {
+.bx.bx-user,
+.bx.bx-key,
+.bx.bxs-universal-access {
   position: absolute;
   margin-left: 10px;
   margin-top: 10px;
@@ -94,20 +95,27 @@
     display: none;
   }
 
-  .signup-form {
-    margin: 30px 100px;
+  .signup-section {
+    justify-content: center;
   }
 
+  .signup-form {
+    margin: 30px 0px 0px 0px;
+  }
+
+  .signup-title {
+    margin-bottom: 30px;
+  }
   .signup-title h2 {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .bx.bx-envelope,
-  .bx.bxs-phone,
-  .bx.bx-key {
-    position: absolute;
-    margin-left: 10px;
-    margin-top: 5px;
-    color: #983bff;
+  .bx.bx-user,
+  .bx.bx-key,
+  .bx.bxs-universal-access {
+    margin-top: 8px;
+    margin-left: 15px;
+    font-size: 26px;
   }
 }
