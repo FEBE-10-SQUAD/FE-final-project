@@ -18,6 +18,7 @@
   padding: 8px 50px;
 }
 
+<<<<<<< HEAD
 .container {
   display: flex;
   position: relative;
@@ -27,6 +28,17 @@
 .content {
   padding: 50px 120px;
 }
+=======
+/* .container{
+  display: flex;
+  position: relative;
+  margin-bottom: 815px;
+} */
+
+/* .content {
+  padding: 50px 120px;
+} */
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
 
 .col-7 .satu {
   display: flex;
@@ -36,10 +48,17 @@
   line-height: 66px;
   color: black;
   text-decoration: none;
+<<<<<<< HEAD
   padding: 50px 120px;
 }
 
 .col-7 .satu:hover {
+=======
+  /* padding: 50px 120px; */
+}
+
+.col-7 .satu:hover{
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
   color: #983bff;
 }
 
@@ -48,8 +67,13 @@
   font-size: 18px;
 }
 
+<<<<<<< HEAD
 .col-5 {
   background-color: #fff6eb;
+=======
+.col-5{
+  background-color: #FFF6EB;
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
   position: absolute;
   width: 522px;
   height: 956px;
@@ -57,20 +81,35 @@
   top: -25px;
 }
 
+<<<<<<< HEAD
 .container .row .satu .adm {
   margin: 2px;
 }
 
 .container .row .dua {
+=======
+.container .row .satu .adm{
+  margin: 2px;
+}
+
+.container .row .dua{
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
   display: flex;
   justify-content: space-around;
   padding: 30px;
 }
 
+<<<<<<< HEAD
 .search {
   display: flex;
   justify-content: space-around;
 }
+=======
+/* .search {
+  display: flex;
+  justify-content: space-around;
+} */
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
 
 input {
   outline: none;
@@ -79,20 +118,36 @@ input {
   padding-right: 130px;
 }
 
+<<<<<<< HEAD
 button {
+=======
+button{
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
   background-color: #983bff;
   color: #ffffff;
   padding: 2px 10px;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 .filter {
+=======
+.filter{
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
   display: flex;
   height: 681px;
 }
 
+<<<<<<< HEAD
 h4 {
   font-weight: 500;
   font-size: 44px;
   line-height: 66px;
 } */
+=======
+ h4{
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 66px;
+}
+>>>>>>> 9e52123d9ce4c4ba613a1c3c50d5e72199da9166
