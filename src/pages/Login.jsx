@@ -1,88 +1,68 @@
 import "../assets/css/Login.css";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import Navbar from "../components/NavBar";
-
+import axios from "axios";
+import { login } from "../redux/features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { login, selectUser } from "../redux/features/userSlice";
+import { Link as LinkRouter, useNavigate } from "react-router-dom";
+// import loginImage from "../assets/images/login.png"
 
 const Login = () => {
-  const user = useSelector(selectUser);
-  const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");
-
-  const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState("");
+  // const { token, user, role } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
 
-  const handleEmailChange = (e) => {
-    setEmailError("");
-    setEmail(e.target.value);
+  const navigate = useNavigate();
 
-    if (email !== "") {
-      const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (emailRegex.test(email)) {
-        setEmailError("");
-      } else {
-        setEmailError("Email format doesnt valid!");
-      }
-    } else {
-      setEmailError("Email is required!");
-    }
-  };
+  const emailField = useRef();
+  const passwordField = useRef();
 
-  const handlePasswordChange = (e) => {
-    setPasswordError("");
-    setPassword(e.target.value);
-
-    if (password !== "") {
-      //check
-    } else {
-      setPasswordError("Password is required!");
-    }
-  };
-
-  useEffect(() => {
-    console.log(user);
-    if (user !== null) {
-      localStorage.setItem("user-info", JSON.stringify(user));
-      window.location.href = "/";
-    }
-  }, [user]);
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (email !== "") {
-      if (emailRegex.test(email)) {
-        setEmailError("");
-      } else {
-        setEmailError("Email format doesnt valid!");
+    try {
+      const userToLoginPayload = {
+        email: emailField.current.value,
+        password: passwordField.current.value,
+      };
+
+      console.log(userToLoginPayload);
+
+      const loginRequest = await axios.post(`https://be-final-project-production.up.railway.app/login`, userToLoginPayload);
+
+      const loginResponse = loginRequest.data;
+
+      console.log(loginResponse.data);
+
+      alert(loginResponse.message);
+
+      if (loginResponse.status) {
+        const token = loginResponse.data.token;
+
+        const getCurrentUser = await axios.get(`https://be-final-project-production.up.railway.app/login/auth/me`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Access-Control-Allow-Origin": "*",
+          },
+        });
+
+        const currentUser = getCurrentUser.data.data.currentUser;
+
+        const role = currentUser.role;
+
+        dispatch(
+          login({
+            token: token,
+            role: role,
+            user: currentUser,
+          })
+        );
+
+        navigate("/");
       }
-    } else {
-      setEmailError("Email is required!");
-    }
-
-    if (password !== "") {
-      //check
-    } else {
-      setPasswordError("Password is required!");
-    }
-
-    if (email !== "" && emailRegex.test(email) && password !== "") {
-      dispatch(
-        login({
-          email: email,
-          password: password,
-          loggedIn: true,
-        })
-      );
-
-      console.log(user);
-      setEmail("");
-      setPassword("");
+    } catch (err) {
+      alert(err.message);
     }
   };
 
@@ -91,7 +71,7 @@ const Login = () => {
       <Navbar />
       <div className="Login">
         <div className="section-image">
-          <img src="login.png" alt="" />
+          <img src="login.png" />
         </div>
         <div className="section-form">
           <div className="signup">
@@ -102,23 +82,21 @@ const Login = () => {
               </button>
             </Link>
           </div>
-          <form className="login-form" onSubmit={handleSubmit}>
+          <form className="login-form">
             <div className="login-title">
               <h2>Login</h2>
             </div>
             <div className="login-input">
               <div className="input-element">
                 <i className="bx bx-envelope"></i>
-                <input type="text" placeholder="email" value={email} onChange={handleEmailChange} />
-                {emailError && <div className="error-msg">{emailError}</div>}
+                <input type="text" placeholder="email" ref={emailField} />
               </div>
               <div className="input-element">
                 <i className="bx bx-key"></i>
-                <input type="password" placeholder="password" value={password} onChange={handlePasswordChange} />
-                {passwordError && <div className="error-msg">{passwordError}</div>}
+                <input type="password" placeholder="password" ref={passwordField} />
               </div>
               <div className="input-element-button">
-                <button type="submit">Login</button>
+                <button onClick={handleSubmit}>Login</button>
               </div>
             </div>
             <div className="connect-google"></div>

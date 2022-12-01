@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../assets/css/Navbar.css";
 
 const Navbar = () => {
-  let user = JSON.parse(localStorage.getItem("user-info"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   function logOut() {
     localStorage.clear();
@@ -28,12 +28,12 @@ const Navbar = () => {
           <Link to="/listbookmark">List Bookmark</Link>
         </li>
       </ul>
-      {localStorage.getItem("user-info") ? (
+      {localStorage.getItem("user") ? (
         <>
           <div className="section-right">
             <div id="profile">
               <h4 id="nameProfile">
-                <i> Users</i>
+                <i>{user.username}</i>
               </h4>
               <div id="iconProfile">
                 <Link to="/ProfilePage/">
