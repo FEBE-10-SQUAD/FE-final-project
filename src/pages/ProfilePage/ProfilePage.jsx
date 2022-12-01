@@ -70,7 +70,7 @@ const ProfilePage = () => {
                   </li>
                   <li>
                     <label htmlFor="email">Email</label>
-                    <span>{user.email}</span>
+                    <span>email</span>
                   </li>
                 </ul>
               </div>
