@@ -1,7 +1,5 @@
 import AOS from "aos";
-import axios from "axios";
 import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import "./assets/css/App.css";
 
@@ -16,31 +14,6 @@ import SignUp from "./pages/SignUp";
 
 const App = () => {
   AOS.init();
-
-  const [jobs, setJobs] = useState([]);
-  const [errors, setErrors] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [appliedJobs, setAppliedJobs] = useState([]);
-
-  // ----------------------------------------------------------
-
-  async function GetDataJobs() {
-    try {
-      let resp = await axios.get(JOB_EP);
-      setJobs(resp.data);
-      // console.log(resp.data);
-      setLoading(!loading);
-    } catch (e) {
-      // errors(true);
-      setErrors(e.message);
-    }
-  }
-
-  useEffect(() => {
-    GetDataJobs();
-  }, []);
-
-  // ----------------------------------------------------------
 
   return (
     <div className="App">
