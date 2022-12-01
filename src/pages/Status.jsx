@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../assets/css/Status.css";
-
-import StatusAdmission from "./StatusAdmission";
 import Navbar from "../components/NavBar";
 import Seacrh from "../components/Status/Search";
 import Filter from "../components/Status/Filter";
-import Cards from "../components/Status/Cards";
 
 const Status = () => {
   // const context = useContext(AppContext);
 
   const [userLogin, setUserLogin] = useState({});
   const [jobsData, setJobsData] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUserLogin = async () => {
@@ -35,8 +34,8 @@ const Status = () => {
           getCurrentUserRequest.data.data.currentUser;
 
         setUserLogin(getCurrentUserResponse);
-      } catch (err) {
-        alert(err.message);
+      } catch (e) {
+        navigate(`/login`);
       }
     };
 
@@ -66,7 +65,7 @@ const Status = () => {
 
         setJobsData(getJobsResponse.data);
       } catch (err) {
-        alert(err.message);
+        alert(err);
       }
     };
 

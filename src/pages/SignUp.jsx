@@ -1,6 +1,6 @@
 import "../assets/css/SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Navbar from "../components/NavBar";
 // import signUpimg from "../../public/signup.svg";
 import axios from "axios";
@@ -26,7 +26,10 @@ const SignUp = () => {
 
       console.log(registerPayload);
 
-      const registerRequest = await axios.post("https://be-final-project-production.up.railway.app/register", registerPayload);
+      const registerRequest = await axios.post(
+        "https://be-final-project-production.up.railway.app/register",
+        registerPayload
+      );
 
       const registerResponse = registerRequest.data;
 
@@ -65,7 +68,11 @@ const SignUp = () => {
             </div>
             <div className="input-element">
               <i className="bx bx-key"></i>
-              <input type="password" placeholder="password" ref={passwordField} />
+              <input
+                type="password"
+                placeholder="password"
+                ref={passwordField}
+              />
             </div>
             <div className="input-element">
               <i class="bx bxs-universal-access"></i>

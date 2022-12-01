@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 const Seacrh = () => {
   return (
-    <div className='seacrh'>
-        <input type="text" placeholder="Job Title or Keyword" value={Seacrh}/>
-        <button >FIND</button>
+    <div className="seacrh">
+      <input type="text" placeholder="Job Title or Keyword" />
+      <button>FIND</button>
     </div>
-  )
-}
+  );
+};
 
-export default Seacrh
+export default Seacrh;

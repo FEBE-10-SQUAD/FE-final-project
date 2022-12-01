@@ -1,11 +1,11 @@
 import "../assets/css/Login.css";
 import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import Navbar from "../components/NavBar";
 import axios from "axios";
 import { login } from "../redux/features/userSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { Link as LinkRouter, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 // import loginImage from "../assets/images/login.png"
 
 const Login = () => {
@@ -29,7 +29,10 @@ const Login = () => {
 
       console.log(userToLoginPayload);
 
-      const loginRequest = await axios.post(`https://be-final-project-production.up.railway.app/login`, userToLoginPayload);
+      const loginRequest = await axios.post(
+        `https://be-final-project-production.up.railway.app/login`,
+        userToLoginPayload
+      );
 
       const loginResponse = loginRequest.data;
 
@@ -40,12 +43,15 @@ const Login = () => {
       if (loginResponse.status) {
         const token = loginResponse.data.token;
 
-        const getCurrentUser = await axios.get(`https://be-final-project-production.up.railway.app/login/auth/me`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Access-Control-Allow-Origin": "*",
-          },
-        });
+        const getCurrentUser = await axios.get(
+          `https://be-final-project-production.up.railway.app/login/auth/me`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Access-Control-Allow-Origin": "*",
+            },
+          }
+        );
 
         const currentUser = getCurrentUser.data.data.currentUser;
 
@@ -93,7 +99,11 @@ const Login = () => {
               </div>
               <div className="input-element">
                 <i className="bx bx-key"></i>
-                <input type="password" placeholder="password" ref={passwordField} />
+                <input
+                  type="password"
+                  placeholder="password"
+                  ref={passwordField}
+                />
               </div>
               <div className="input-element-button">
                 <button onClick={handleSubmit}>Login</button>
