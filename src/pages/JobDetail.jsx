@@ -17,7 +17,7 @@ const JobDetail = () => {
   const id = params.pathname.split("/")[2];
 
   useEffect(() => {
-    const getJobsData = async (e) => {
+    const getJobsData = async () => {
       try {
         const getJobsRequest = await axios.get(
           `https://be-final-project-production.up.railway.app/v1/admin/jobs/${id}`
