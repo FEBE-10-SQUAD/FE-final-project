@@ -10,7 +10,7 @@ import ModalEditProfile from "../../components/modal/ModalEditProfile";
 import ModalAboutMe from "../../components/modal/ModalAboutMe";
 
 const ProfilePage = () => {
-  let user = JSON.parse(localStorage.getItem("user-info"));
+  let user = JSON.parse(localStorage.getItem("user"));
 
   const [openModal, setOpenModal] = useState(false);
   const [modalAboutMe, setModalAboutMe] = useState(false);
@@ -39,7 +39,7 @@ const ProfilePage = () => {
             </div>
             <div className="profile-show">
               <img src={pfp} alt="" />
-              <span>Nama User</span>
+              <span>{user.username}</span>
             </div>
             <div className="profile-info">
               <div className="profile-info-left">
@@ -70,7 +70,7 @@ const ProfilePage = () => {
                   </li>
                   <li>
                     <label htmlFor="email">Email</label>
-                    <span>email</span>
+                    <span>{user.email}</span>
                   </li>
                 </ul>
               </div>
