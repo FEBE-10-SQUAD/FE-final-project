@@ -65,7 +65,7 @@ const Status = () => {
 
         setJobsData(getJobsResponse.data);
       } catch (err) {
-        alert(err);
+        console.log(err);
       }
     };
 
@@ -76,29 +76,35 @@ const Status = () => {
     <div>
       <Navbar />
 
-      <div className="container">
+      <div className="container-status">
         <div className="row">
           <div className="col-7">
             <div className="satu">
               <div className="regis">
-                <Link to="/status">Registration </Link>
+                <Link to="/status">Applied JObs </Link>
               </div>
-              <div className="adm">
+              {/* <div className="adm">
                 <Link to="/StatusAdmission"> Admission</Link>
-              </div>
+              </div> */}
             </div>
             <div className="dua">
-              <Seacrh />
-              <Filter />
+              {/* <Seacrh /> */}
+              {/* <Filter /> */}
             </div>
-            <div className="cards">
+            <div className="cards-status">
               {jobsData &&
                 jobsData.map((item) => {
                   return (
-                    <li key={item._id}>
-                      <h2>{item.companyId && item.companyId.username}</h2>
-                      <h4>{item.jobId && item.jobId.name}</h4>
-                      <h4>{item.isAccepted ? "Diterima" : "Terkirm"}</h4>
+                    <li className="card-status" key={item._id}>
+                      <div className="atas">
+                        {" "}
+                        <h2>{item.jobId && item.jobId.name}</h2>
+                        <h4>{item.companyId && item.companyId.username}</h4>
+                      </div>
+                      <div className="bawah">
+                        {" "}
+                        <h6>{item.isAccepted ? "Diterima" : "Terkirim"}</h6>
+                      </div>
                     </li>
                   );
                 })}

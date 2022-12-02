@@ -24,9 +24,9 @@ const Navbar = () => {
         <li>
           <Link to="/status">Status</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/listbookmark">List Bookmark</Link>
-        </li>
+        </li> */}
       </ul>
       {localStorage.getItem("user") ? (
         <>

@@ -37,7 +37,8 @@ html {
 
 .home {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+
   padding-top: 120px;
 }
 
@@ -62,7 +63,7 @@ html {
   padding-bottom: 20px;
 }
 
-.home-img {
+.home-img img {
   max-width: 100%;
   height: auto;
 }
