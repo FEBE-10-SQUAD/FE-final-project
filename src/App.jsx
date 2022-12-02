@@ -1,34 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import AOS from "aos";
+import { Navigate, Route, Routes } from "react-router-dom";
+
+import "./assets/css/App.css";
+
+import AppLayout from "./AppLayout";
+import LandingPage from "./pages/LandingPage";
+import JobVacancy from "./pages/JobVacancy";
+import JobDetail from "./pages/JobDetail";
+import Status from "./pages/Status";
+import ListBookmark from "./pages/ListBookmark";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+
+import SavedOffers from "./pages/ProfilePage/SavedOffers";
+import UploadDocuments from "./pages/ProfilePage/UploadDocuments";
+
+const App = () => {
+  AOS.init();
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
 
-export default App
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/JobVacancy" element={<JobVacancy />} />
+          <Route path="/JobDetail/:jobId" element={<JobDetail />} />
+          <Route path="/Status" element={<Status />} />
+          <Route path="/ListBookmark" element={<ListBookmark />} />
+          <Route path="/ProfilePage">
+            <Route path="/ProfilePage/" element={<ProfilePage />} />
+            <Route path="/ProfilePage/saved-offers" element={<SavedOffers />} />
+            <Route
+              path="/ProfilePage/up-doc"
+              element={
+                localStorage.getItem("user-info") ? (
+                  <UploadDocuments />
+                ) : (
+                  <Navigate replace to={"/login"} />
+                )
+              }
+            />
+          </Route>
+        </Route>
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
