@@ -18,72 +18,68 @@
   padding: 8px 50px;
 }
 
-.container {
+
+.container .row{
   display: flex;
   position: relative;
-  margin-bottom: 815px;
+  margin-bottom: 747px;
+  padding: 30px 100px 0px 100px ;
+
 }
 
-.content {
-  padding: 50px 120px;
-}
-
-.col-7 .satu {
+.container .row .col-7 .satu {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   font-weight: 500;
   font-size: 44px;
   line-height: 66px;
   color: black;
   text-decoration: none;
-  padding: 50px 120px;
+  padding-left: 100px;
+  /* padding: 50px 120px; */
 }
 
-.col-7 .satu:hover {
-  color: #983bff;
-}
+.container .row .col-7 .dua {
 
-.col-7 .dua {
   font-weight: 120;
   font-size: 18px;
+  padding-left: 100px;
 }
 
-.col-5 {
-  background-color: #fff6eb;
+
+.container .row .col-5{
+  background-color: #FFF6EB;
+
   position: absolute;
   width: 522px;
-  height: 956px;
+  height: 951px;
   left: 827px;
   top: -25px;
 }
 
-.container .row .satu .adm {
-  margin: 2px;
+
+.container .row .dua{
+  display: inline;
+  padding-left: 30px;
 }
 
-.container .row .dua {
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
+.seacrh {
+  display: inline;
+
 }
 
-.search {
-  display: flex;
-  justify-content: space-around;
-}
-
-input {
+input{
   outline: none;
   border: 1px solid black;
   padding-left: 10px;
-  padding-right: 130px;
+  padding-right: 100px;
 }
 
-button {
+
+.seacrh-button h4{
   background-color: #983bff;
   color: #ffffff;
   padding: 2px 10px;
-  cursor: pointer;
 }
 
 .filter {
@@ -91,8 +87,4 @@ button {
   height: 681px;
 }
 
-h4 {
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 66px;
-} */
+

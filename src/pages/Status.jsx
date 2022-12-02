@@ -85,11 +85,12 @@ const Status = () => {
               </div>
               <div className="adm">
                 <Link to="/StatusAdmission"> Admission</Link>
+
               </div>
             </div>
             <div className="dua">
               <Seacrh />
-              <Filter />
+              
             </div>
             <div className="cards">
               {jobsData &&

@@ -2,9 +2,14 @@ import React from "react";
 
 const Seacrh = () => {
   return (
-    <div className="seacrh">
-      <input type="text" placeholder="Job Title or Keyword" />
-      <button>FIND</button>
+
+    <div className='seacrh'>
+       <div className='seacrh-input'>
+        <input type="text" placeholder="Job Title or Keyword"  />
+       </div>
+       <div className='seacrh-button'>
+        <button><h4>FIND</h4></button>
+       </div>
     </div>
   );
 };
