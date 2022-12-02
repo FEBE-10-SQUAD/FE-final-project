@@ -1,4 +1,4 @@
-.LandingPage {
+.LP_wrap {
   overflow-x: hidden;
 }
 
@@ -33,14 +33,12 @@ html {
   margin-left: 8px;
 }
 
-/* css section home */
+/* -----------------------------------SECTION 1----------------------------------- */
 
 .home {
   display: flex;
   justify-content: space-between;
-  padding-top: 160px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-top: 120px;
 }
 
 .home-text h1 {
@@ -69,7 +67,7 @@ html {
   height: auto;
 }
 
-/* css section steps */
+/* -----------------------------------SECTION 2----------------------------------- */
 #steps {
   position: relative;
   background-color: #d1a8ff;
@@ -116,7 +114,7 @@ html {
   padding-bottom: 15px;
 }
 
-/* CSS section about us */
+/* -----------------------------------SECTION 3----------------------------------- */
 /* bestJob */
 #aboutUs {
   display: inline;
@@ -217,7 +215,7 @@ html {
   padding-bottom: 35px;
 }
 
-/* SECTION 4 */
+/* -----------------------------------SECTION 4----------------------------------- */
 .dropCv {
   display: flex;
   justify-content: space-around;
@@ -264,7 +262,6 @@ html {
   position: relative;
   margin-bottom: 20px;
   margin-top: 150px;
-  /* background-color: #5d269c; */
 }
 
 .saysJob-text {
@@ -272,26 +269,13 @@ html {
 }
 
 .saysJob-text h3 {
-  /* width: 514px; */
-
   text-align: center;
-  /* padding-left: 500px; */
-  /* height: 61px;
-      left: 730px;
-      top: 1465px; */
   font-weight: 700;
-
   font-size: 36px;
   color: #000000;
 }
 
 .saysJob-text p {
-  /* width: 450px;
-    height: 50px;
-    left: 730px;
-    top: 726px; */
-
-  /* padding-left: 520px; */
   font-weight: 400;
   font-size: 20px;
   padding-bottom: 35px;
@@ -310,7 +294,6 @@ html {
 .main-card {
   width: 100%;
   display: flex;
-  /* width: 200%; */
   transition: 1s;
   justify-content: center;
 }

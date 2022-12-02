@@ -1,4 +1,4 @@
-#haveApply {
+/* #haveApply {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,11 +18,13 @@
   padding: 8px 50px;
 }
 
+
 .container .row{
   display: flex;
   position: relative;
   margin-bottom: 747px;
   padding: 30px 100px 0px 100px ;
+
 }
 
 .container .row .col-7 .satu {
@@ -38,19 +40,23 @@
 }
 
 .container .row .col-7 .dua {
+
   font-weight: 120;
   font-size: 18px;
   padding-left: 100px;
 }
 
+
 .container .row .col-5{
   background-color: #FFF6EB;
+
   position: absolute;
   width: 522px;
   height: 951px;
   left: 827px;
   top: -25px;
 }
+
 
 .container .row .dua{
   display: inline;
@@ -59,6 +65,7 @@
 
 .seacrh {
   display: inline;
+
 }
 
 input{
@@ -68,14 +75,16 @@ input{
   padding-right: 100px;
 }
 
+
 .seacrh-button h4{
   background-color: #983bff;
   color: #ffffff;
   padding: 2px 10px;
 }
 
-.filter{
+.filter {
   display: flex;
   height: 681px;
 }
+
 
