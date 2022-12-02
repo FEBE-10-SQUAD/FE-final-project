@@ -1,4 +1,15 @@
-/* #haveApply {
+.row {
+  display: flex;
+}
+
+/* .col-7 {
+} */
+
+.satu {
+  display: flex;
+}
+
+#haveApply {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,15 +29,32 @@
   padding: 8px 50px;
 }
 
-.container {
+.container-status {
   display: flex;
   position: relative;
   margin-bottom: 815px;
 }
 
-.content {
-  padding: 50px 120px;
+.cards-status {
+  padding: 0 50px;
 }
+
+.card-status {
+  padding: 10px;
+  border: 1px solid blueviolet;
+}
+
+.atas {
+  margin-bottom: 20px;
+}
+
+.atas h2 {
+  color: blueviolet;
+}
+
+/* .content-status {
+    padding: 50px 120px;
+  } */
 
 .col-7 .satu {
   display: flex;
@@ -72,14 +100,14 @@
   justify-content: space-around;
 }
 
-input {
+.search input {
   outline: none;
   border: 1px solid black;
   padding-left: 10px;
   padding-right: 130px;
 }
 
-button {
+button .btn-find {
   background-color: #983bff;
   color: #ffffff;
   padding: 2px 10px;
@@ -90,9 +118,3 @@ button {
   display: flex;
   height: 681px;
 }
-
-h4 {
-  font-weight: 500;
-  font-size: 44px;
-  line-height: 66px;
-} */

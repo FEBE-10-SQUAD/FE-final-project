@@ -8,7 +8,7 @@ import Sec1 from "../components/landingPage/Sec1";
 import Sec2 from "../components/landingPage/Sec2";
 import Sec3 from "../components/landingPage/Sec3";
 import Sec4 from "../components/landingPage/Sec4";
-import Sec5 from "../components/landingPage/Sec5";
+// import Sec5 from "../components/landingPage/Sec5";
 import Sec6 from "../components/landingPage/Sec6";
 import Sec7 from "../components/landingPage/Sec7";
 
@@ -30,7 +30,7 @@ const LandingPage = () => {
       <div className="LP_wrap">
         <Sec3 />
         <Sec4 />
-        <Sec5 />
+        {/* <Sec5 /> */}
         <Sec6 />
         <Sec7 />
       </div>
